@@ -49,3 +49,12 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// Ensure Lombok annotation processing works
+compileJava {
+	options.annotationProcessorPath = configurations.annotationProcessor
+}
+
+compileTestJava {
+	options.annotationProcessorPath = configurations.annotationProcessor
+}
